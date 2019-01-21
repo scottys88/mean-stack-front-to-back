@@ -16,8 +16,8 @@
     "mongood": "*",
     "mongoose": "*",
     "nodemon": "^1.18.9",
-    "passport": "*",
-    "passport-jwt": "*"
+    "passport": "0.3.2",
+    "passport-jwt": "2.2.1"
   },
   "author": "",
   "license": "ISC"
