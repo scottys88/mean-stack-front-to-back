@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { User } from '../components/models/user';
+import { User,ServerResponse, UserLogin } from '../components/models/user';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -14,10 +14,16 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  registerUser(user: User): Observable<User> {
+  registerUser(user: User): Observable<ServerResponse> {
     const headers = new HttpHeaders();
     headers.append('Conent-type', 'application/json');
-    return this.http.post<User>(`http://localhost:3000/users/register`, user, {headers: headers});
+    return this.http.post<ServerResponse>(`http://localhost:3000/users/register`, user, {headers: headers});
+  }
+
+  authenticateUser(UserLogin: UserLogin) {
+    const headers = new HttpHeaders();
+    headers.append('Conent-type', 'application/json');
+    return this.http.post<ServerResponse>(`http://localhost:3000/users/authenticate`, UserLogin, {headers: headers});
   }
 
 
