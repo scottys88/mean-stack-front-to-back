@@ -8,6 +8,8 @@ export interface User {
 export interface ServerResponse {
     success: boolean;
     msg: string;
+    token?: string;
+    user?: User;
 }
 
 export interface UserLogin {
