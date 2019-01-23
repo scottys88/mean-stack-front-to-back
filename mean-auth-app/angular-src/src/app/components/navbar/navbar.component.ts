@@ -9,6 +9,7 @@ import { FlashMessagesService } from 'angular2-flash-messages';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  isTokenExpired: boolean;
 
   constructor(
     private authService: AuthService,
@@ -17,6 +18,7 @@ export class NavbarComponent implements OnInit {
     ) { }
 
   ngOnInit() {
+
   }
 
   onLogoutClick() {

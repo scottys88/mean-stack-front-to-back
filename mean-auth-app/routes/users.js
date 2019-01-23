@@ -43,7 +43,7 @@ router.post('/authenticate', (req, res, next) => {
 
         res.json({
           success: true,
-          token: 'bearer '+token,
+          token: 'jwt '+token,
           user: {
             id: user._id,
             name: user.name,
